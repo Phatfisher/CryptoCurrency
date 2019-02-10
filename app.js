@@ -39,18 +39,27 @@ app.post("/", function (req, res) {
 // implementing the other way around, but there's no api that supports it this way. 
 // just a working example to practice writing in node/express
 app.post("/fiat-to-crypto", function (req, res) {
-    var crypto = req.body.crypto2;
-    var fiat = req.body.fiat2;
+    var crypto2 = req.body.crypto2;
+    var fiat2 = req.body.fiat2;
+    var userAmount = req.body.amount;
 
-    var baseUrl = "https://apiv2.bitcoinaverage.com/indices/global/ticker/";
-    finalUrl = baseUrl + fiat + crypto;
+    var options = {
+        url: "https://apiv2.bitcoinaverage.com/convert/global",
+        method: "GET",
+        qs: {
+            from: crypto2, 
+            to: fiat2,
+            amount: userAmount,
+        }
+    };
 
-    request(finalURL, function (err, response, body) {
+    request(options, function (err, response, body) {
         var data = JSON.parse(body);
-        var price = data.last;
-        var currDate = data.display_timestamp;
+        var price = data.price;
+
+        var currDate = data.time;
         res.write("<p>The current date is " + currDate + "</p>");
-        res.write("<h1>The current price of " + fiat + " is " + price + " " + crypto + "</h1>");
+        res.write("<h1>The current price of " + userAmount + " " + crypto2 + " is " + price + " " + fiat2 + "</h1>");
         res.send();
     });
 })

@@ -26,27 +26,27 @@
         <button type="submit" name="button">Check</button>
     </form>
     <br>
-    <h1>Exchange Rate Around the World</h1>
-    <p>Select which Fiat currency you want to convert to Crypto currency.</p>
+    <h1>Crypto Currency Checker</h1>
+    
     <form action="/fiat-to-crypto" method="post">
+        <input type="text" name="amount" placeholder="Quantity">
+        <select name="crypto2">
+            <option value="BTC">Bitcoin</option>
+            <option value="ETC">Ethereum</option>
+            <option value="LTC">Litecoins</option>
+        </select>
+        <b> to </b>
         <select name="fiat2">
             <option value="USD">US Dollars</option>
-            <option value="MXN">Mexican Peso</option>
-            <option value="JPY">Japanese Yen</option>
-            <option value="KRW">South Korean Won</option>
+            <option value="GDP">British Pounds</option>
+            <option value="EUR">Euros</option>
         </select>
-        <form action="/" method="post">
-            <select name="crypto2">
-                <option value="MXN">Mexican Peso</option>
-                <option value="JPY">Japanese Yen</option>
-                <option value="KRW">South Korean Won</option>
-                <option value="USD">US Dollars</option>
-            </select>
-            <button type="submit" name="button">Check</button>
-        </form>
-        <br>
-        <p>Disclaimer-Not all fields and values work correctly, as the free api I'm retrieving the data from doesn't support all conversion rates.</p>
-        <p>The world currency rate conversion does not work. The free API does not support conversion rates. </p>
+        <button type="submit" name="button">Check</button>
+    </form>
+    <br>
+    <p>Disclaimer-Not all fields and values work correctly, as the free api I'm retrieving the data from doesn't support
+        all conversion rates.</p>
+    
 </body>
 
 </html>
