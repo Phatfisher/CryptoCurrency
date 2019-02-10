@@ -38,7 +38,7 @@ app.post("/", function (req, res) {
 
 // implementing the other way around, but there's no api that supports it this way. 
 // just a working example to practice writing in node/express
-app.post("/fiat-to-crypto", function (req, res) {
+app.post("/crypto-to-fiat", function (req, res) {
     var crypto2 = req.body.crypto2;
     var fiat2 = req.body.fiat2;
     var userAmount = req.body.amount;
