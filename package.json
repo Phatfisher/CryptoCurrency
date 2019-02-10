@@ -1,0 +1,16 @@
+{
+  "name": "crytocurrency",
+  "version": "1.0.0",
+  "description": "A simple crytocurreny web app using node,express,javascript, and api's. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ma Vang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
